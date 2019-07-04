@@ -14,7 +14,9 @@
     "build:dev": "cross-env NODE_ENV=development webpack ---debug --colors --display-error-details --config ./webpack/webpack.config.dev-server.js",
     "build": "npm run clean && cross-env NODE_ENV=production webpack --colors --display-error-details --config ./webpack/webpack.config.prod.js",
     "test": "cross-env NODE_ENV=test karma start",
-    "test:watch": "cross-env NODE_ENV=test npm test -- --watch --no-single-run"
+    "test:watch": "cross-env NODE_ENV=test npm test -- --watch --no-single-run",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "author": "Choon Ken Ding",
   "license": "MIT",
@@ -109,6 +111,8 @@
     "url-loader": "^0.5.7",
     "webpack": "^1.13.2",
     "webpack-dev-middleware": "^1.5.1",
-    "webpack-hot-middleware": "^2.12.2"
-  }
+    "webpack-hot-middleware": "^2.12.2",
+    "snyk": "^1.189.0"
+  },
+  "snyk": true
 }
